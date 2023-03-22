@@ -2,12 +2,13 @@ body {
   color: #3C2A21;
   margin: 0;
   text-align: center;
-  font-family: 'Merriweather', serif;
+  font-family: 'Nunito', sans-serif;
   background-color: #E5E5CB;
-  s
 }
 *{
   scroll-behavior: smooth;
+  box-sizing: border-box;
+  
 }
 .header {
     background-color: #3C2A21;
@@ -15,6 +16,18 @@ body {
     position: fixed;
     width: 100%;
     z-index: 3;
+  }
+
+  .description{
+    background-color: rgb(72, 56, 56, 0.2);
+    margin: 40px 140px 40px 140px;
+    border-radius: 40px;
+  }
+  #desc-content{
+    color: black;
+    opacity: 1;
+    font-family: 'Nunito', sans-serif;
+    padding: 40px 40px;
   }
   
   .header ul {
@@ -145,14 +158,14 @@ body {
 
 h1 {
   color: #1A120B;
-  font-size: 5.625rem;
+  font-size: 3.625rem;
   margin: 50px auto 0 auto;
   font-family: 'Sacramento', cursive;
 }
 
 h2 {
   color: #1A120B;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 2.5rem;
   font-weight: normal;
   padding-bottom: 10px;
@@ -160,7 +173,7 @@ h2 {
 
 h3 {
   color: #1A120B;
-  font-family: 'Montserrat', sans-serif;    
+  font-family: 'Nunito', sans-serif;   
 }
 
 p {
@@ -176,7 +189,7 @@ hr {
 
 a{
   color: #D5CEA3;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   margin: 10px 20px;
   text-decoration: none;
 }
@@ -256,7 +269,7 @@ a:hover {
 .btn {
   background: #3C2A21;
   border-radius: 8px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: #ffffff;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
@@ -267,8 +280,42 @@ a:hover {
   background: #1A120B;
   color: #E5E5CB;
   border-radius: 8px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+
+.row {margin: 30px 50px -5px;}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: rgb(72, 56, 56, 0.2);
+  border-radius: 40px;
+  height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
 }
