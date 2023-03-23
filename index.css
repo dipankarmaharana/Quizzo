@@ -5,6 +5,7 @@ body {
   font-family: 'Nunito', sans-serif;
   background-color: #E5E5CB;
 }
+
 *{
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -16,11 +17,30 @@ body {
     position: fixed;
     width: 100%;
     z-index: 3;
+    animation: nav-load 300ms ease-in;
   }
 
+  @keyframes nav-load {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .header li{
+    animation-name: nav-link-load;
+  }
+
+  .marquee{
+    background-color: rgb(72, 56, 56, 0.2);
+    margin: 40px 140px 0 140px;
+    border-radius: 40px;
+  }
   .description{
     background-color: rgb(72, 56, 56, 0.2);
-    margin: 40px 140px 40px 140px;
+    margin: 5px 140px 40px 140px;
     border-radius: 40px;
   }
   #desc-content{
@@ -268,7 +288,7 @@ a:hover {
 
 .btn {
   background: #3C2A21;
-  border-radius: 8px;
+  border-radius: 40px;
   font-family: 'Nunito', sans-serif;
   color: #ffffff;
   font-size: 20px;
@@ -279,7 +299,7 @@ a:hover {
 .btn:hover {
   background: #1A120B;
   color: #E5E5CB;
-  border-radius: 8px;
+  border-radius: 40px;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
@@ -293,7 +313,10 @@ a:hover {
 }
 
 
-.row {margin: 30px 50px -5px;}
+.row {margin: 30px 50px -5px;
+flex: 0 0 33.333%;
+display: flex;
+padding: 10px;}
 
 
 .row:after {
@@ -304,12 +327,14 @@ a:hover {
 
 
 .card {
+  box-sizing: border-box;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 16px;
   text-align: center;
   background-color: rgb(72, 56, 56, 0.2);
   border-radius: 40px;
   height: 100%;
+  flex: 0 0 100%;
 }
 
 @media screen and (max-width: 600px) {
@@ -317,5 +342,180 @@ a:hover {
     width: 100%;
     display: block;
     margin-bottom: 20px;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  flex-wrap: no-wrap;
+}
+
+.column div {
+  width: 50%;
+  height: 200px;
+}
+
+
+@media (max-width: 600px) {
+  .column {
+    flex-direction: column;
+  }
+  .container div {
+    width: 100%;
+  }
+}
+.ag-format-container {
+  width: 1142px;
+  margin: 0 auto;
+}
+
+
+
+.ag-exams_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 50px 0;
+}
+.ag-exams_item {
+  -ms-flex-preferred-size: calc(33.33333% - 30px);
+  flex-basis: calc(33.33333% - 30px);
+
+  margin: 0 15px 30px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+}
+.ag-exams-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+  border-radius: 40px;
+  position: relative;
+}
+.ag-exams-item_link:hover,
+.ag-exams-item_link:hover .ag-exams-item_date, .ag-exams-item_link:hover .ag-exams-item_date-box {
+  text-decoration: none;
+  color: #D5CEA3;
+}
+.ag-exams-item_link:hover .ag-exams-item_title{
+  text-decoration: none;
+  color: #D5CEA3;
+}
+.ag-exams-item_link:hover .ag-exams-item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+.ag-exams-item_title {
+  min-height: 87px;
+  margin: 0 0 25px;
+
+  overflow: hidden;
+
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+
+  z-index: 2;
+  position: relative;
+}
+.ag-exams_box:hover{
+  color: #D5CEA3;
+}
+.ag-exams-item_date-box {
+  font-size: 18px;
+  color: black;
+
+  z-index: 2;
+  position: relative;
+}
+
+.ag-exams-item_date {
+  font-weight: bold;
+  color: #3C2A21;
+
+  -webkit-transition: color .5s ease;
+  -o-transition: color .5s ease;
+  transition: color .5s ease
+}
+.ag-exams-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: #3C2A21;
+
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+
+  border-radius: 50%;
+
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.ag-exams_item:nth-child(2n) .ag-exams-item_bg .ag-exams-item_title{
+  background-color: #3C2A21;
+  color: #D5CEA3;
+}
+.ag-exams_item:nth-child(3n) .ag-exams-item_bg {
+  background-color: #3C2A21;
+}
+.ag-exams_item:nth-child(4n) .ag-exams-item_bg {
+  background-color: #3C2A21;
+}
+.ag-exams_item:nth-child(5n) .ag-exams-item_bg {
+  background-color: #3C2A21;
+}
+.ag-exams_item:nth-child(6n) .ag-exams-item_bg {
+  background-color: #3C2A21;
+}
+
+
+
+@media only screen and (max-width: 979px) {
+  .ag-exams_item {
+    -ms-flex-preferred-size: calc(50% - 30px);
+    flex-basis: calc(50% - 30px);
+  }
+  .ag-exams-item_title {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+
+}
+@media only screen and (max-width: 639px) {
+  .ag-exams_item {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+  .ag-exams-item_title {
+    min-height: 72px;
+    line-height: 1;
+
+    font-size: 24px;
+  }
+  .ag-exams-item_link {
+    padding: 22px 40px;
+  }
+  .ag-exams-item_date-box {
+    font-size: 16px;
   }
 }
