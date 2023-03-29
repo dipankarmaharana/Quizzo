@@ -4,69 +4,71 @@
     <meta charset="utf-8" />
     <title>e-Exam Portal</title>
     <link rel="stylesheet" href="index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {box-sizing: border-box;
-        scroll-behavior: smooth;}
+      * {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
 
+      .container {
+        padding-left: 300px;
+        padding-right: 300px;
+      }
 
-.container {
-  padding-left: 300px;
-  padding-right: 300px;
-}
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
 
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
 
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
+      .registerbtn {
+        background-color: #04aa6d;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+        margin-bottom: 40px;
+      }
 
+      .registerbtn:hover {
+        opacity: 1;
+      }
 
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
+      .link {
+        color: blue;
+      }
+      .link:hover {
+        color: blue;
+      }
 
-
-.registerbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.registerbtn:hover {
-  opacity:1;
-}
-
-
-.link{
-    color: blue;
-}
-.link:hover{
-    color: blue;
-}
-
-
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
-}
+      .signin {
+        background-color: #f1f1f1;
+        text-align: center;
+      }
     </style>
   </head>
 
@@ -74,7 +76,9 @@ hr {
     <header class="header">
       <a href="index.html" class="logo">e-Exam</a>
       <input class="menu-btn" type="checkbox" id="menu-btn" />
-      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      <label class="menu-icon" for="menu-btn"
+        ><span class="navicon"></span
+      ></label>
       <ul class="menu">
         <li><a href="#work">Openforum</a></li>
         <li><a href="#about">e-Repository</a></li>
@@ -83,59 +87,86 @@ hr {
       </ul>
     </header>
     <div class="top-container">
-        <div class="title-text">
-            <h1>JEE Mains</h1>
-            <h3><b>National Testing Agency</b></h3>
-        </div>
-
+      <div class="title-text">
+        <h1>JEE Mains</h1>
+        <h3><b>National Testing Agency</b></h3>
+      </div>
     </div>
 
     <div class="middle-container">
-        <div class="marquee">
-            <marquee behavior="scroll" direction="left">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eius similique ratione soluta accusantium sunt possimus odit cupiditate tempore enim. Enim, eveniet eos quidem cumque odit voluptate rem ipsum expedita?</p>
-            </marquee>
-          </div>
-        <div class="description">
-            <div id="desc-content">
-                <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt explicabo at cumque delectus id ipsum error, unde nisi sequi quia?</p>
-            </div>
-          </div>
-          <form action="">
-            <div class="container">
-                <h3>Fetch Application Status</h3>
-                <label for="ano"><b>Application Number</b></label>
-              <input type="text" placeholder="Enter Email" name="email" id="email" required>
+      <div class="marquee">
+        <marquee behavior="scroll" direction="left">
+          <p>
+            Registrations are now OPEN. Please register for JEE-Main April Exam latest by 03.04.2023. 
+          </p>
+        </marquee>
+      </div>
+      <div class="description">
+        <div id="desc-content">
+          <p class="intro">
+            Joint Entrance Examination – Main (JEE-Main), formerly All India Engineering Entrance Examination (AIEEE), is an Indian standardised computer-based test for admission to various technical undergraduate programs in engineering, architecture, and planning across colleges in India.
+          </p>
+        </div>
+      </div>
+      <form action="" >
+        <div class="container">
+          <h2>Fetch Application Status</h2>
+          <label for="ano"><b>Application Number</b></label>
+          <input
+            type="text"
+            placeholder="Enter Application Number"
+            name="ano"
+            id="ano"
+            required
+          />
+
+          <label for="psw"><b>Password</b></label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="psw"
+            id="psw"
+            required
+          />
+          <button type="submit" class="registerbtn">Fetch</button>
+        </div>
+      </form>
+      <form action="action_page.php" onsubmit="return validate();">
+        <div class="container description">
+          <h2 class="newreg">New Registration</h2>
+          <p>Register for JEE-Main(April)</p>
+
+          <label for="email"><b>Email</b></label>
+          <input
+            type="text"
+            placeholder="Enter Email"
+            name="email"
+            id="email"
+            required
+          />
+
+          <label for="psw"><b>Password</b></label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="psw"
+            id="psw"
+            required
+          />
+          <hr />
+
+          <p>
+            By creating an account you agree to our
+            <a class="link" href="#">Terms & Privacy</a>.
+          </p>
+          <button type="submit" class="registerbtn">Register</button>
+        </div>
           
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-            </div>
-            
-          </form>
-        <form action="action_page.php">
-            <div class="container description">
-              <h2>Register</h2>
-              <p></p>
-              <hr>
-          
-              <label for="email"><b>Email</b></label>
-              <input type="text" placeholder="Enter Email" name="email" id="email" required>
-          
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-          
-              <label for="psw-repeat"><b>Repeat Password</b></label>
-              <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-              <hr>
-          
-              <p>By creating an account you agree to our <a class="link" href="#">Terms & Privacy</a>.</p>
-              <button type="submit" class="registerbtn">Register</button>
-            </div>
-          
-            <div class="container signin">
-              <p>Already have an account? <a class="link" href="#">Sign in</a>.</p>
-            </div>
-          </form>
+        <div class="container signin">
+          <p>Already have an account? <a class="link" href="#">Sign in</a>.</p>
+        </div>
+        
+      </form>
     </div>
 
     <div class="bottom-container">
@@ -144,5 +175,6 @@ hr {
       <a class="footer-link" href="">Website</a>
       <p class="copyright">© 2023 All rights reserved.</p>
     </div>
+    <script src="register.js"></script>
   </body>
 </html>
